@@ -1,3 +1,4 @@
+
 export const weddingData = {
   couple: {
     groomFirstName: "Sebin",
@@ -6,6 +7,9 @@ export const weddingData = {
     brideFirstName: "Treesa",
     brideLastName: "Maria John",
     brideFullName: "Treesa Maria John",
+
+    // Display order for the bride's version
+    displayOrder: "bride-first",
   },
 
   event: {
@@ -17,11 +21,11 @@ export const weddingData = {
     time: "4:00 PM",
 
     venue: {
-  name: "St. Dominic's Cathedral",
-  address: "Kanjirappally",
-  mapsUrl:
-    "https://www.google.com/maps/search/?api=1&query=St.+Dominic's+Cathedral+Church,+Kanjirappally,+Kerala",
-},
+      name: "St. Dominic's Cathedral",
+      address: "Kanjirappally",
+      mapsUrl:
+        "https://www.google.com/maps/search/?api=1&query=St.+Dominic's+Cathedral+Church,+Kanjirappally,+Kerala",
+    },
 
     reception: {
       name: "Maha Jubilee Hall",
@@ -63,15 +67,14 @@ export const weddingData = {
   },
 
   hosts: {
-    name1: "Sandra Mary Joseph",
-    name2: "Sreya Joseph",
+    name1: "Ann Maria John",
     tagline: "Sharing our happiness with love & gratitude",
   },
 
   meta: {
-    title: "Sebin & Treesa — മിന്നുകെട്ട്",
+    title: "Treesa & Sebin — മിന്നുകെട്ട്",
     description:
-      "Join us for the wedding celebration of Sebin & Treesa on 02 November 2026 at St. Dominic's Cathedral, Kanjirappally.",
+      "Join us for the wedding celebration of Treesa & Sebin on 02 November 2026 at St. Dominic's Cathedral, Kanjirappally.",
     url: "",
   },
 };

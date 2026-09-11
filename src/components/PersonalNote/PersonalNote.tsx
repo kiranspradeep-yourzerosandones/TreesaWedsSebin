@@ -35,12 +35,14 @@ export default function PersonalNote() {
           transition={{ duration: 0.8 }}
         >
           <div className="w-8 h-[1px] bg-[#D8B26E]" />
+
           <p
             className="text-[#D8B26E] text-[10px] tracking-[0.3em] uppercase"
             style={{ fontFamily: "'Poppins', sans-serif" }}
           >
             A note from us
           </p>
+
           <div className="w-8 h-[1px] bg-[#D8B26E]" />
         </motion.div>
 
@@ -55,7 +57,7 @@ export default function PersonalNote() {
         >
           &ldquo;To everyone who has shaped our lives — thank you for being
           part of this moment with us. We can&apos;t wait to see you on
-          the 16<sup className="text-base">th</sup>.&rdquo;
+          the 2<sup className="text-base">nd</sup>.&rdquo;
         </motion.blockquote>
 
         {/* Signature */}
@@ -72,7 +74,7 @@ export default function PersonalNote() {
             <div className="w-12 h-[1px] bg-[#D8B26E]/40" />
           </div>
 
-          {/* Couple Names — handwritten feel */}
+          {/* Couple Names — Bride First */}
           <p
             className="text-[#6B2D44] text-2xl sm:text-3xl"
             style={{
@@ -81,7 +83,7 @@ export default function PersonalNote() {
               fontWeight: 400,
             }}
           >
-            {couple.groomFirstName} & {couple.brideFirstName}
+            {couple.brideFirstName} & {couple.groomFirstName}
           </p>
 
           <p
@@ -95,3 +97,4 @@ export default function PersonalNote() {
     </section>
   );
 }
+

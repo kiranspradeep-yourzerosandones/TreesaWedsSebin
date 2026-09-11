@@ -1,3 +1,4 @@
+
 "use client";
 
 import { motion } from "framer-motion";
@@ -35,7 +36,7 @@ export default function Footer() {
           We found each other
         </motion.p>
 
-        {/* Couple Names */}
+        {/* Couple Names — Bride First */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -49,7 +50,7 @@ export default function Footer() {
               fontSize: "clamp(42px, 10vw, 72px)",
             }}
           >
-            {couple.groomFirstName}
+            {couple.brideFirstName}
           </h2>
 
           <p
@@ -69,7 +70,7 @@ export default function Footer() {
               fontSize: "clamp(42px, 10vw, 72px)",
             }}
           >
-            {couple.brideFirstName}
+            {couple.groomFirstName}
           </h2>
         </motion.div>
 
@@ -204,17 +205,7 @@ export default function Footer() {
               {hosts.name1}
             </p>
 
-            <div className="flex flex-col gap-1">
-              <div className="w-1 h-1 rounded-full bg-[#D8B26E]/40" />
-              <div className="w-1 h-1 rounded-full bg-[#D8B26E]/40" />
-            </div>
-
-            <p
-              className="text-white/80 text-lg sm:text-xl font-light"
-              style={{ fontFamily: "'Cormorant Garamond', serif" }}
-            >
-              {hosts.name2}
-            </p>
+            
           </div>
 
           <p
@@ -256,7 +247,7 @@ export default function Footer() {
           >
             With love,{" "}
             <span className="text-white/35">
-              {couple.groomFirstName} & {couple.brideFirstName}
+              {couple.brideFirstName} & {couple.groomFirstName}
             </span>
           </p>
 
@@ -273,3 +264,4 @@ export default function Footer() {
     </footer>
   );
 }
+

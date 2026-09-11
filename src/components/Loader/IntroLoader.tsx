@@ -315,6 +315,7 @@ export default function IntroLoader({ onComplete }: IntroLoaderProps) {
                         </p>
                       </motion.div>
 
+                      {/* Bride — First */}
                       <motion.h1
                         className="text-[#4A1F30] text-3xl sm:text-4xl text-center leading-tight"
                         initial={{
@@ -336,11 +337,11 @@ export default function IntroLoader({ onComplete }: IntroLoaderProps) {
                           fontStyle: "italic",
                         }}
                       >
-                        {couple.groomFirstName}
-                        {couple.groomLastName && (
+                        {couple.brideFirstName}
+                        {couple.brideLastName && (
                           <>
                             <br />
-                            {couple.groomLastName}
+                            {couple.brideLastName}
                           </>
                         )}
                       </motion.h1>
@@ -391,6 +392,7 @@ export default function IntroLoader({ onComplete }: IntroLoaderProps) {
                         />
                       </motion.div>
 
+                      {/* Groom — Second */}
                       <motion.h1
                         className="text-[#4A1F30] text-3xl sm:text-4xl text-center leading-tight mb-6"
                         initial={{
@@ -412,11 +414,11 @@ export default function IntroLoader({ onComplete }: IntroLoaderProps) {
                           fontStyle: "italic",
                         }}
                       >
-                        {couple.brideFirstName}
-                        {couple.brideLastName && (
+                        {couple.groomFirstName}
+                        {couple.groomLastName && (
                           <>
                             <br />
-                            {couple.brideLastName}
+                            {couple.groomLastName}
                           </>
                         )}
                       </motion.h1>
@@ -562,21 +564,26 @@ function TopOrnament() {
     >
       <g>
         <path d="M30 5 L28 12 L30 10 L32 12 Z" fill="#D8B26E" />
+
         <path
           d="M30 12 L25 20 L30 28 L35 20 Z"
           fill="none"
           stroke="#D8B26E"
           strokeWidth="1"
         />
+
         <circle cx="30" cy="20" r="1.5" fill="#D8B26E" />
+
         <path
           d="M18 22 Q14 22, 14 26 Q14 28, 17 27 Q15 25, 18 24"
           fill="#D8B26E"
         />
+
         <path
           d="M42 22 Q46 22, 46 26 Q46 28, 43 27 Q45 25, 42 24"
           fill="#D8B26E"
         />
+
         <line
           x1="10"
           y1="35"
@@ -585,9 +592,11 @@ function TopOrnament() {
           stroke="#D8B26E"
           strokeWidth="0.5"
         />
+
         <circle cx="20" cy="38" r="1" fill="#D8B26E" />
         <circle cx="30" cy="38" r="1.5" fill="#D8B26E" />
         <circle cx="40" cy="38" r="1" fill="#D8B26E" />
+
         <line
           x1="22"
           y1="42"
@@ -730,6 +739,7 @@ function FloralCornerTop({
           <CherryFlower cx={95} cy={20} size={4} />
           <CherryFlower cx={115} cy={12} size={5} />
           <CherryFlower cx={135} cy={22} size={4} />
+
           <CherryFlower cx={25} cy={45} size={3.5} />
           <CherryFlower cx={50} cy={52} size={4} />
           <CherryFlower cx={80} cy={48} size={4.5} />
@@ -744,7 +754,6 @@ function FloralCornerTop({
           <circle cx="40" cy="60" r="1.5" fill="#6B2D44" />
           <circle cx="70" cy="65" r="2" fill="#6B2D44" />
           <circle cx="100" cy="68" r="1.5" fill="#6B2D44" />
-
           <circle cx="10" cy="35" r="1" fill="#8B3D5A" />
           <circle cx="62" cy="40" r="1" fill="#8B3D5A" />
           <circle cx="145" cy="45" r="1.2" fill="#8B3D5A" />
@@ -906,4 +915,3 @@ function PetalSVG({ size = 12 }: { size?: number }) {
     </svg>
   );
 }
-

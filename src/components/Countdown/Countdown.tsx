@@ -1,3 +1,4 @@
+
 import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import { weddingData } from "@/data/weddingData";
@@ -21,26 +22,35 @@ function calculateTimeLeft(targetDate: string): TimeLeft {
 
   const nowDate = new Date();
   const targetDateObj = new Date(targetDate);
+
   let months =
     (targetDateObj.getFullYear() - nowDate.getFullYear()) * 12 +
     (targetDateObj.getMonth() - nowDate.getMonth());
+
   if (targetDateObj.getDate() < nowDate.getDate()) {
     months -= 1;
   }
+
   months = Math.max(0, months);
 
   const afterMonths = new Date(nowDate);
   afterMonths.setMonth(afterMonths.getMonth() + months);
+
   const remainingMs = target - afterMonths.getTime();
 
   const days = Math.floor(remainingMs / (1000 * 60 * 60 * 24));
+
   const hours = Math.floor(
     (remainingMs % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)
   );
+
   const minutes = Math.floor(
     (remainingMs % (1000 * 60 * 60)) / (1000 * 60)
   );
-  const seconds = Math.floor((remainingMs % (1000 * 60)) / 1000);
+
+  const seconds = Math.floor(
+    (remainingMs % (1000 * 60)) / 1000
+  );
 
   return { months, days, hours, minutes, seconds };
 }
@@ -62,7 +72,11 @@ function UnitCard({ value, label, index }: UnitCardProps) {
       initial={{ opacity: 0, y: 40 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
-      transition={{ duration: 0.6, delay: index * 0.1, ease: "easeOut" }}
+      transition={{
+        duration: 0.6,
+        delay: index * 0.1,
+        ease: "easeOut",
+      }}
     >
       {/* Glass Card */}
       <div className="relative w-full bg-white/50 backdrop-blur-md border border-[#D8B26E]/25 rounded-xl sm:rounded-2xl px-1.5 py-3 sm:px-5 sm:py-5 md:px-6 md:py-6 text-center shadow-sm">
@@ -91,16 +105,20 @@ function UnitCard({ value, label, index }: UnitCardProps) {
 
 export default function Countdown() {
   const { event, couple } = weddingData;
+
   const [timeLeft, setTimeLeft] = useState<TimeLeft>(() =>
     calculateTimeLeft(event.dateISO)
   );
+
   const [hasMounted, setHasMounted] = useState(false);
 
   useEffect(() => {
     setHasMounted(true);
+
     const interval = setInterval(() => {
       setTimeLeft(calculateTimeLeft(event.dateISO));
     }, 1000);
+
     return () => clearInterval(interval);
   }, [event.dateISO]);
 
@@ -120,6 +138,7 @@ export default function Countdown() {
       </div>
 
       <div className="max-w-3xl mx-auto relative z-10 px-3 sm:px-6">
+
         {/* Header */}
         <motion.div
           className="text-center mb-10 sm:mb-14"
@@ -134,18 +153,22 @@ export default function Countdown() {
           >
             Counting Down To
           </p>
+
+          {/* Couple Names — Bride First */}
           <h2
             className="text-[#6B2D44] text-3xl sm:text-4xl md:text-5xl font-light"
             style={{ fontFamily: "'Cormorant Garamond', serif" }}
           >
-            {couple.groomFirstName} & {couple.brideFirstName}
+            {couple.brideFirstName} & {couple.groomFirstName}
           </h2>
+
           <p
             className="text-[#8C8C8C] text-sm mt-2"
             style={{ fontFamily: "'Poppins', sans-serif" }}
           >
             {event.date} · {event.time}
           </p>
+
           <div className="w-12 h-[1px] bg-[#D8B26E] mx-auto mt-6" />
         </motion.div>
 
@@ -165,7 +188,10 @@ export default function Countdown() {
           // SSR Skeleton
           <div className="grid grid-cols-5 gap-1.5 sm:gap-3 md:gap-5 items-start max-w-2xl mx-auto">
             {units.map((unit) => (
-              <div key={unit.label} className="flex flex-col items-center flex-1 min-w-0">
+              <div
+                key={unit.label}
+                className="flex flex-col items-center flex-1 min-w-0"
+              >
                 <div className="w-full bg-white/50 border border-[#D8B26E]/25 rounded-xl sm:rounded-2xl px-1.5 py-3 sm:px-5 sm:py-5 md:px-6 md:py-6 text-center">
                   <span
                     className="text-[#6B2D44] text-xl sm:text-3xl md:text-4xl font-light block leading-none"
@@ -174,6 +200,7 @@ export default function Countdown() {
                     --
                   </span>
                 </div>
+
                 <p
                   className="text-[#8C8C8C] text-[8px] sm:text-[10px] tracking-[0.15em] sm:tracking-[0.2em] uppercase mt-2 sm:mt-3"
                   style={{ fontFamily: "'Poppins', sans-serif" }}
@@ -189,7 +216,7 @@ export default function Countdown() {
         <motion.p
           className="text-center text-[#8C8C8C] text-xs mt-10 sm:mt-12 tracking-wide"
           initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
+          whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.8, delay: 0.6 }}
           style={{ fontFamily: "'Poppins', sans-serif" }}
@@ -200,3 +227,4 @@ export default function Countdown() {
     </section>
   );
 }
+

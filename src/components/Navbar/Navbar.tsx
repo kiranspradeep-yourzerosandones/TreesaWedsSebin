@@ -70,7 +70,7 @@ export default function Navbar() {
               }`}
               style={{ fontFamily: "'Cormorant Garamond', serif" }}
             >
-              S
+              T
             </span>
 
             <span
@@ -86,7 +86,7 @@ export default function Navbar() {
               }`}
               style={{ fontFamily: "'Cormorant Garamond', serif" }}
             >
-              T
+              S
             </span>
           </a>
 

@@ -1,3 +1,4 @@
+
 "use client";
 
 import { useEffect, useState } from "react";
@@ -136,30 +137,7 @@ export default function Hero() {
             <ArchFrame />
           </motion.div>
 
-          {/* Top ornament */}
-          {/* <motion.div
-            className="absolute top-5 sm:top-7 left-1/2 -translate-x-1/2 z-20"
-            initial={{
-              opacity: 0,
-              y: -10,
-              scale: 0.8,
-            }}
-            animate={{
-              opacity: 1,
-              y: 0,
-              scale: 1,
-            }}
-            transition={{
-              duration: 0.6,
-              delay: 0.5,
-            }}
-          >
-            <TopOrnament />
-          </motion.div> */}
-
-          {/* ─── CONTENT ───
-              z-40 keeps all text above the couple silhouette (z-30)
-          */}
+          {/* ─── CONTENT ─── */}
           <div className="relative z-40 h-full flex flex-col items-center justify-between px-7 sm:px-10 pt-20 sm:pt-24 pb-20 sm:pb-28">
             {/* Top label */}
             <motion.div
@@ -212,7 +190,7 @@ export default function Hero() {
                   delay: 0.9,
                 }}
               >
-                {/* Groom */}
+                {/* Bride */}
                 <motion.h1
                   className="text-[#6B2D44] leading-[1.05]"
                   style={{
@@ -228,7 +206,7 @@ export default function Hero() {
                     delay: 0.95,
                   }}
                 >
-                  {couple.groomFirstName}
+                  {couple.brideFirstName}
                 </motion.h1>
 
                 {/* Ampersand */}
@@ -270,7 +248,7 @@ export default function Hero() {
                   />
                 </motion.div>
 
-                {/* Bride */}
+                {/* Groom */}
                 <motion.h1
                   className="text-[#6B2D44] leading-[1.05]"
                   style={{
@@ -286,7 +264,7 @@ export default function Hero() {
                     delay: 1.25,
                   }}
                 >
-                  {couple.brideFirstName}
+                  {couple.groomFirstName}
                 </motion.h1>
               </motion.div>
 
@@ -775,72 +753,17 @@ function FloralCornerTop({
           <CherryFlower cx={110} cy={55} size={3.5} />
           <CherryFlower cx={130} cy={50} size={4} />
 
-          <circle
-            cx="25"
-            cy="25"
-            r="2"
-            fill="#6B2D44"
-          />
-          <circle
-            cx="50"
-            cy="30"
-            r="1.5"
-            fill="#6B2D44"
-          />
-          <circle
-            cx="85"
-            cy="25"
-            r="2"
-            fill="#6B2D44"
-          />
-          <circle
-            cx="105"
-            cy="32"
-            r="1.5"
-            fill="#6B2D44"
-          />
-          <circle
-            cx="125"
-            cy="35"
-            r="2"
-            fill="#6B2D44"
-          />
-          <circle
-            cx="40"
-            cy="60"
-            r="1.5"
-            fill="#6B2D44"
-          />
-          <circle
-            cx="70"
-            cy="65"
-            r="2"
-            fill="#6B2D44"
-          />
-          <circle
-            cx="100"
-            cy="68"
-            r="1.5"
-            fill="#6B2D44"
-          />
-          <circle
-            cx="10"
-            cy="35"
-            r="1"
-            fill="#8B3D5A"
-          />
-          <circle
-            cx="62"
-            cy="40"
-            r="1"
-            fill="#8B3D5A"
-          />
-          <circle
-            cx="145"
-            cy="45"
-            r="1.2"
-            fill="#8B3D5A"
-          />
+          <circle cx="25" cy="25" r="2" fill="#6B2D44" />
+          <circle cx="50" cy="30" r="1.5" fill="#6B2D44" />
+          <circle cx="85" cy="25" r="2" fill="#6B2D44" />
+          <circle cx="105" cy="32" r="1.5" fill="#6B2D44" />
+          <circle cx="125" cy="35" r="2" fill="#6B2D44" />
+          <circle cx="40" cy="60" r="1.5" fill="#6B2D44" />
+          <circle cx="70" cy="65" r="2" fill="#6B2D44" />
+          <circle cx="100" cy="68" r="1.5" fill="#6B2D44" />
+          <circle cx="10" cy="35" r="1" fill="#8B3D5A" />
+          <circle cx="62" cy="40" r="1" fill="#8B3D5A" />
+          <circle cx="145" cy="45" r="1.2" fill="#8B3D5A" />
         </g>
       </svg>
     </motion.div>
@@ -924,24 +847,9 @@ function FloralCornerBottom({
           <CherryFlower cx={45} cy={18} size={3} />
           <CherryFlower cx={65} cy={25} size={3.5} />
 
-          <circle
-            cx="18"
-            cy="25"
-            r="1.5"
-            fill="#6B2D44"
-          />
-          <circle
-            cx="50"
-            cy="28"
-            r="1.5"
-            fill="#6B2D44"
-          />
-          <circle
-            cx="75"
-            cy="35"
-            r="1.5"
-            fill="#6B2D44"
-          />
+          <circle cx="18" cy="25" r="1.5" fill="#6B2D44" />
+          <circle cx="50" cy="28" r="1.5" fill="#6B2D44" />
+          <circle cx="75" cy="35" r="1.5" fill="#6B2D44" />
         </g>
       </svg>
     </motion.div>
@@ -1040,4 +948,3 @@ function CoupleSilhouette() {
     </motion.div>
   );
 }
-

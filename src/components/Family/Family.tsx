@@ -1,3 +1,4 @@
+
 "use client";
 
 import { motion, Variants } from "framer-motion";
@@ -17,7 +18,7 @@ export default function Family() {
       x: 0,
       transition: {
         duration: 0.8,
-        ease: [0.25, 0.1, 0.25, 1], // easeOut cubic-bezier
+        ease: [0.25, 0.1, 0.25, 1],
       },
     },
   };
@@ -47,9 +48,7 @@ export default function Family() {
     <motion.div
       className="flex-1 min-w-0"
       variants={
-        direction === "left"
-          ? cardVariants
-          : cardVariantsRight
+        direction === "left" ? cardVariants : cardVariantsRight
       }
       initial="hidden"
       whileInView="visible"
@@ -145,8 +144,7 @@ export default function Family() {
         <h2
           className="font-cormorant text-[#6B2D44] text-3xl sm:text-4xl md:text-5xl font-light"
           style={{
-            fontFamily:
-              "'Cormorant Garamond', serif",
+            fontFamily: "'Cormorant Garamond', serif",
           }}
         >
           Our Families
@@ -158,8 +156,9 @@ export default function Family() {
       {/* Family Cards */}
       <div className="max-w-5xl mx-auto flex flex-col md:flex-row gap-6 md:gap-8 items-stretch">
 
+        {/* Bride's Family - First */}
         <FamilyCard
-          data={families.groom}
+          data={families.bride}
           direction="left"
         />
 
@@ -188,8 +187,9 @@ export default function Family() {
           />
         </motion.div>
 
+        {/* Groom's Family - Second */}
         <FamilyCard
-          data={families.bride}
+          data={families.groom}
           direction="right"
         />
       </div>

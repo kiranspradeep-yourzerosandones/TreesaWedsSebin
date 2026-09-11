@@ -176,7 +176,7 @@ Message: ${message.trim()}
             className="text-[#666666] text-sm mt-3 max-w-sm mx-auto leading-relaxed"
             style={{ fontFamily: "'Poppins', sans-serif" }}
           >
-            Leave a little blessing for Sebin & Treesa
+            Leave a little blessing for Treesa & Sebin
           </p>
 
           <div className="w-12 h-[1px] bg-[#D8B26E] mx-auto mt-6" />
