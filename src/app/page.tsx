@@ -27,6 +27,9 @@ export default function Home() {
     <>
       {!loaderDone && <IntroLoader onComplete={handleLoaderComplete} />}
 
+      {/* Kept outside main to make sure it functions properly while loader is up */}
+      <MusicToggle />
+
       <main
         className={`transition-opacity duration-700 ${
           loaderDone ? "opacity-100" : "opacity-0"
@@ -49,8 +52,7 @@ export default function Home() {
         <Gallery />
 
         <SectionDivider variant="simple" color="ivory" />
-     
-
+        
         <Wishes />
 
         <SectionDivider variant="dove" color="ivory" />
@@ -59,7 +61,6 @@ export default function Home() {
         <Footer />
 
         <FloatingButtons />
-        <MusicToggle />
       </main>
     </>
   );

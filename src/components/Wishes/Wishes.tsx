@@ -1,4 +1,3 @@
-
 "use client";
 
 import { useState, useEffect, FormEvent } from "react";
@@ -103,44 +102,46 @@ export default function Wishes() {
   }, []);
 
   const handleSubmit = (e: FormEvent) => {
-  e.preventDefault();
+    e.preventDefault();
 
-  if (!name.trim() || !message.trim()) return;
+    if (!name.trim() || !message.trim()) return;
 
-  const whatsappNumber = "919744996592";
+    // Updated WhatsApp Number: +49 152 23025241
+    const whatsappNumber = "4915223025241";
 
-  const whatsappMessage = `Wishes for Sebin & Treesa
+    const whatsappMessage = `Wishes for Treesa & Sebin
 
 From: ${name.trim()}
 
 Message: ${message.trim()}
 
-— Sent from the Sebin & Treesa Wedding Website`;
+— Sent from the Treesa & Sebin Wedding Website`;
 
-  const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(
-    whatsappMessage
-  )}`;
+    const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(
+      whatsappMessage
+    )}`;
 
-  window.open(whatsappUrl, "_blank");
+    window.open(whatsappUrl, "_blank");
 
-  // Keep the wish displayed locally on the website
-  const newWish: Wish = {
-    id: `wish-${Date.now()}`,
-    name: name.trim(),
-    message: message.trim(),
-    timestamp: Date.now(),
+    // Keep the wish displayed locally on the website
+    const newWish: Wish = {
+      id: `wish-${Date.now()}`,
+      name: name.trim(),
+      message: message.trim(),
+      timestamp: Date.now(),
+    };
+
+    storeWish(newWish);
+    setWishes((prev) => [newWish, ...prev]);
+    setName("");
+    setMessage("");
+    setSubmitted(true);
+
+    setTimeout(() => {
+      setSubmitted(false);
+    }, 3000);
   };
 
-  storeWish(newWish);
-  setWishes((prev) => [newWish, ...prev]);
-  setName("");
-  setMessage("");
-  setSubmitted(true);
-
-  setTimeout(() => {
-    setSubmitted(false);
-  }, 3000);
-};
   return (
     <section className="section-padding bg-[#F6E8E6]/30 relative overflow-hidden">
       {/* Background decoration */}
@@ -182,10 +183,7 @@ Message: ${message.trim()}
           <div className="w-12 h-[1px] bg-[#D8B26E] mx-auto mt-6" />
         </motion.div>
 
-        {/* 
-          Form — only rendered after mount to prevent
-          browser extension hydration mismatches (fdprocessedid)
-        */}
+        {/* Form */}
         {!hasMounted ? (
           <div className="bg-white/60 backdrop-blur-sm border border-[#D8B26E]/20 rounded-2xl p-6 mb-8 min-h-[230px]">
             <div className="animate-pulse space-y-4">
@@ -317,4 +315,3 @@ Message: ${message.trim()}
     </section>
   );
 }
-
